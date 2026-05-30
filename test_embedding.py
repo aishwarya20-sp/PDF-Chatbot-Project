@@ -1,0 +1,13 @@
+from dotenv import load_dotenv
+load_dotenv()
+
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001"
+)
+
+result = embeddings.embed_query("Hello world")
+
+print(len(result))
+print(result[:5])
